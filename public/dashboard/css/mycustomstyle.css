@@ -1,0 +1,108 @@
+.width30 {
+    width: 30%;
+}
+
+.float_right {
+    float: right !important;
+}
+
+.custom_img {
+    width: 150px;
+    height: 150px;
+}
+
+.card_title_center {
+    width: 100%;
+    text-align: center !important;
+}
+
+.dropdown-menu.lang {
+    min-width: 3rem !important;
+    padding: unset;
+}
+
+.orderCreate, .ordersPage {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between;
+}
+
+.orderCreate > div {
+    width: 49%;
+}
+
+.ordersPage > div.card {
+    width: 39%;
+    height: fit-content;
+}
+
+.ordersPage > div.card {
+    width: 39%;
+    height: fit-content;
+}
+
+.ordersPage > div.card:first-of-type {
+
+    width: 60%
+
+}
+
+.print-area h3 {
+    font-size: 22px;
+}
+
+#ordersTable th {
+    padding: 5px 0;
+    border-bottom: solid .3px rgba(0, 0, 0, .2) !important;
+}
+
+
+@media (max-width: 767.9px ) {
+    .orderCreate {
+        flex-wrap: nowrap !important;
+        flex-direction: column !important;
+    }
+
+    .orderCreate > div {
+        width: 100% !important;
+    }
+
+}
+
+/*Loading Products*/
+#loader {
+    display: flex;
+    justify-content: center;
+}
+
+.lds-dual-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #17a2b8;
+    border-color: #17a2b8 transparent #17a2b8 transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+td.desc > * {
+    margin: 0 !important;
+    font-size: 12px !important;
+}
