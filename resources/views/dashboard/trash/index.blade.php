@@ -28,53 +28,51 @@
         </section>
         <section class="content">
             <div class="container-fluid">
-                @include("components.dashboard.includes.message")
+                @include('components.dashboard.includes.message')
                 <div class="col-12">
                     <div class="card card-info card-outline p-1" style="height: fit-content;">
                         <div class="card-header">
                             <h3 class="card-title float-none mb-0">@lang('site.recycles')</h3>
                         </div>
                         {{-- Categories --}}
-                        @if(count($categories) > 0)
+                        @if (count($categories) > 0)
                             <div class="accordion mt-3" id="categories">
                                 <div class="card">
                                     <div class="card-header p-0" id="headingOne">
                                         <h2 class="mb-0">
                                             <button class="btn btn-info btn-block text-left" type="button"
-                                                    data-toggle="collapse" data-target="#collapseCategory"
-                                                    aria-expanded="true"
-                                                    aria-controls="collapseOne">
-                                                @lang("site.categories")
+                                                data-toggle="collapse" data-target="#collapseCategory" aria-expanded="true"
+                                                aria-controls="collapseOne">
+                                                @lang('site.categories')
                                             </button>
                                         </h2>
                                     </div>
-                                    <div id="collapseCategory" class="collapse"
-                                         aria-labelledby="headingOne"
-                                         data-parent="#categories">
-                                            <?php $count = 0 ?>
+                                    <div id="collapseCategory" class="collapse" aria-labelledby="headingOne"
+                                        data-parent="#categories">
+                                        <?php $count = 0; ?>
                                         <table class="table table-striped">
                                             <tbody>
-                                            @foreach($categories as $category)
-                                                    <?php $count++ ?>
-                                                <tr>
-                                                    <td>{{$count}}.</td>
-                                                    <td>{{$category->name}}</td>
-                                                    <td>
-                                                        <a href="{{route("dash.trash.restore",["table"=>"categories","id"=>$category->id])}}"
-                                                           class="btn btn-info mr-1">
-                                                            @lang("site.restore")
-                                                            <i class="fa fa-undo"></i>
-                                                        </a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="{{route("dash.trash.forceDelete",["table"=>"categories","id"=>$category->id])}}"
-                                                           class="btn btn-danger mr-1">
-                                                            @lang("site.deletePer")
-                                                            <i class="fa fa-trash-alt"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
+                                                @foreach ($categories as $category)
+                                                    <?php $count++; ?>
+                                                    <tr>
+                                                        <td>{{ $count }}.</td>
+                                                        <td>{{ $category->name }}</td>
+                                                        <td>
+                                                            <a href="{{ route('dash.trash.restore', ['table' => 'categories', 'id' => $category->id]) }}"
+                                                                class="btn btn-info mr-1">
+                                                                @lang('site.restore')
+                                                                <i class="fa fa-undo"></i>
+                                                            </a>
+                                                        </td>
+                                                        <td>
+                                                            <a href="{{ route('dash.trash.forceDelete', ['table' => 'categories', 'id' => $category->id]) }}"
+                                                                class="btn btn-danger mr-1">
+                                                                @lang('site.deletePer')
+                                                                <i class="fa fa-trash-alt"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
 
@@ -83,46 +81,44 @@
                             </div>
                         @endif
                         {{-- Products --}}
-                        @if( isset($products) && count($products) > 0)
+                        @if (isset($products) && count($products) > 0)
                             <div class="accordion mt-3" id="products">
                                 <div class="card">
                                     <div class="card-header p-0" id="headingOne">
                                         <h2 class="mb-0">
                                             <button class="btn btn-info btn-block text-left" type="button"
-                                                    data-toggle="collapse" data-target="#collapseProduct"
-                                                    aria-expanded="true"
-                                                    aria-controls="collapseOne">
-                                                @lang("site.products")
+                                                data-toggle="collapse" data-target="#collapseProduct" aria-expanded="true"
+                                                aria-controls="collapseOne">
+                                                @lang('site.products')
                                             </button>
                                         </h2>
                                     </div>
-                                    <div id="collapseProduct" class="collapse"
-                                         aria-labelledby="headingOne"
-                                         data-parent="#products">
-                                            <?php $count = 0 ?>
+                                    <div id="collapseProduct" class="collapse" aria-labelledby="headingOne"
+                                        data-parent="#products">
+                                        <?php $count = 0; ?>
                                         <table class="table table-striped">
                                             <tbody>
-                                            @foreach($products as $product)
-                                                    <?php $count++ ?>
-                                                <tr>
-                                                    <td>{{$count}}.</td>
-                                                    <td>{{$product->name}}</td>
-                                                    <td>
-                                                        <a href="{{route("dash.trash.restore",["table"=>"products","id"=>$product->id])}}"
-                                                           class="btn btn-info mr-1">
-                                                            @lang("site.restore")
-                                                            <i class="fa fa-undo"></i>
-                                                        </a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="{{route("dash.trash.forceDelete",["table"=>"products","id"=>$category->id])}}"
-                                                           class="btn btn-danger mr-1">
-                                                            @lang("site.deletePer")
-                                                            <i class="fa fa-trash-alt"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
+                                                @foreach ($products as $product)
+                                                    <?php $count++; ?>
+                                                    <tr>
+                                                        <td>{{ $count }}.</td>
+                                                        <td>{{ $product->name }}</td>
+                                                        <td>
+                                                            <a href="{{ route('dash.trash.restore', ['table' => 'products', 'id' => $product->id]) }}"
+                                                                class="btn btn-info mr-1">
+                                                                @lang('site.restore')
+                                                                <i class="fa fa-undo"></i>
+                                                            </a>
+                                                        </td>
+                                                        <td>
+                                                            <a href="{{ route('dash.trash.forceDelete', ['table' => 'products', 'id' => $product->id]) }}"
+                                                                class="btn btn-danger mr-1">
+                                                                @lang('site.deletePer')
+                                                                <i class="fa fa-trash-alt"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
 
@@ -130,46 +126,44 @@
                                 </div>
                             </div>
                         @endif
-                        @if(isset($clients) && count($clients) > 0)
+                        @if (isset($clients) && count($clients) > 0)
                             <div class="accordion mt-3" id="clients">
                                 <div class="card">
                                     <div class="card-header p-0" id="headingOne">
                                         <h2 class="mb-0">
                                             <button class="btn btn-info btn-block text-left" type="button"
-                                                    data-toggle="collapse" data-target="#collapseClient"
-                                                    aria-expanded="true"
-                                                    aria-controls="collapseOne">
-                                                @lang("site.clients")
+                                                data-toggle="collapse" data-target="#collapseClient" aria-expanded="true"
+                                                aria-controls="collapseOne">
+                                                @lang('site.clients')
                                             </button>
                                         </h2>
                                     </div>
-                                    <div id="collapseClient" class="collapse"
-                                         aria-labelledby="headingOne"
-                                         data-parent="#clients">
-                                            <?php $count = 0 ?>
+                                    <div id="collapseClient" class="collapse" aria-labelledby="headingOne"
+                                        data-parent="#clients">
+                                        <?php $count = 0; ?>
                                         <table class="table table-striped">
                                             <tbody>
-                                            @foreach($clients as $client)
-                                                    <?php $count++ ?>
-                                                <tr>
-                                                    <td>{{$count}}.</td>
-                                                    <td>{{$client->name}}</td>
-                                                    <td>
-                                                        <a href="{{route("dash.trash.restore",["table"=>"clients","id"=>$client->id])}}"
-                                                           class="btn btn-info mr-1">
-                                                            @lang("site.restore")
-                                                            <i class="fa fa-undo"></i>
-                                                        </a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="{{route("dash.trash.forceDelete",["table"=>"clients","id"=>$client->id])}}"
-                                                           class="btn btn-danger mr-1">
-                                                            @lang("site.deletePer")
-                                                            <i class="fa fa-trash-alt"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
+                                                @foreach ($clients as $client)
+                                                    <?php $count++; ?>
+                                                    <tr>
+                                                        <td>{{ $count }}.</td>
+                                                        <td>{{ $client->name }}</td>
+                                                        <td>
+                                                            <a href="{{ route('dash.trash.restore', ['table' => 'clients', 'id' => $client->id]) }}"
+                                                                class="btn btn-info mr-1">
+                                                                @lang('site.restore')
+                                                                <i class="fa fa-undo"></i>
+                                                            </a>
+                                                        </td>
+                                                        <td>
+                                                            <a href="{{ route('dash.trash.forceDelete', ['table' => 'clients', 'id' => $client->id]) }}"
+                                                                class="btn btn-danger mr-1">
+                                                                @lang('site.deletePer')
+                                                                <i class="fa fa-trash-alt"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
 
