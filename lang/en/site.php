@@ -151,5 +151,7 @@ return [
     "discount" => "Discount",
     "date" => "Date",
     "theDate" => "Date",
+    "reset.db" => "The system reset successfully",
+    "db.reset" => "Reset System",
 
 ];

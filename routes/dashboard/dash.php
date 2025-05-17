@@ -34,6 +34,7 @@ Route::group(['prefix' => "dash", "middleware" => ["web", "auth"]], function () 
         Route::get('trash', [DashboardController::class, "trash"])->name("trash.index");
         Route::get('restore/{table}/{id}', [DashboardController::class, "restoreData"])->name("trash.restore");
         Route::get('forceDelete/{table}/{id}', [DashboardController::class, "forceDelete"])->name("trash.forceDelete");
+        Route::get('reset-db', [DashboardController::class, "resetDB"])->name("reset.db");
         // Daily Invoice
         Route::get('daily-invoice', [DashboardController::class, "dailyInvoice"])->name("dailyInvoice");
         Route::get('yearly-invoice', [DashboardController::class, "yearlyInvoice"])->name("yearlyInvoice");

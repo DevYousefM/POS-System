@@ -150,5 +150,7 @@ return [
     "dailyExpenses" => "مصروفات اليوم",
     "monthlyExpenses" => "مصروفات الشهر",
     "discount" => "قيمة الخصم",
-    "totalAfterDis" => "الأجمالي بعد الخصم"
+    "totalAfterDis" => "الأجمالي بعد الخصم",
+    'reset.db' => "اعادة تهيئة النظام",
+    'db.reset' => "تم اعادة تهيئة النظام"
 ];

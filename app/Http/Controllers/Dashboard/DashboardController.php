@@ -10,6 +10,7 @@ use App\Models\Product;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 
@@ -89,5 +90,10 @@ class DashboardController extends Controller
         })->latest()->paginate(15);
         $yearlyInvoice = true;
         return view("dashboard.orders.index", compact("orders", "yearlyInvoice"));
+    }
+    public function resetDB()
+    {
+        Artisan::call("migrate:fresh --seed");
+        return redirect()->back()->with("success", __("db.reset"));
     }
 }
