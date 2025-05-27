@@ -8,9 +8,11 @@
         <li class="nav-item d-none d-sm-inline-block">
             <a href="{{ route('dash.index') }}" class="nav-link">@lang('site.home')</a>
         </li>
-        <li class="nav-item d-none d-sm-inline-block">
-            <a href="{{ route('dash.reset.db') }}" class="nav-link">@lang('site.reset.db')</a>
-        </li>
+        @if(auth()->user()->hasRole("super_admin"))
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="{{ route('dash.reset.db') }}" class="nav-link">@lang('site.reset.db')</a>
+            </li>
+        @endif
     </ul>
 
 
